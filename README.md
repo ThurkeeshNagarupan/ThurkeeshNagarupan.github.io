@@ -1,4 +1,4 @@
-<!--Name: Thurkeesh
+<!-- Name: Thurkeesh
 File: filename.html
 Date: September 19th 2024
 This is an HTML overview of how to create a website using GitHub
