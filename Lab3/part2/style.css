@@ -1,30 +1,32 @@
-html {
-    font-family: sans-serif;
-    font-size: 16px; 
-}
-
-/* Your CSS below here */
 body {
-    background-color: #f0f0f0; 
+    margin: 0;
+    display: flex;
+    justify-content: center; /* This centers the box horizontally */
+    align-items: center; /* This centers the box vertically */
+    height: 100vh; 
+    background-color: #ffffff; /* Set a white background for the whole page */
 }
 
-div {
-    width: 200px; /* This is the width for the large box */
-    height: 100px; /* This is the  height for the large box */
-    margin: 0 auto; /* This basically centers the box horizontally */
-    display: flex; /* This uses the flexbox to center text vertically and horizontally */
-    justify-content: center; /* This Centers text horizontally */
-    align-items: center; /* This Centers text vertically */
-    font-size: 1.125rem; 
-    background-color: rgb(212, 7, 7);
-    color: #ffffff; 
-    text-shadow: 1px 1px 2px black; 
-    border-radius: 8px; 
-    border: 1px solid #b30000; 
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.2) 100%), red;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 
-    inset 0px 2px 4px rgba(255, 255, 255, 0.4), 
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3); 
-    
- 
+.box {
+    width: 200px; /* Set the width for the box */
+    height: 150px; /* Set the height for the box */
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.2) 100%), #d40000; /* Add gradient and base red color */
+    border: 1px solid #6f0000; /* Slightly darker border for the box */
+    border-radius: 12px; /* Rounded corners for the box */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5), /* Raised shadow */
+    inset 2px 2px 5px rgba(255, 255, 255, 0.3), /* White shadow at the top-left */
+    inset -2px -2px 5px rgba(0, 0, 0, 0.3); /* Black shadow at the bottom-right */
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
 }
+
+/* Style for the paragraph (text inside the box) */
+p {
+    margin: 0;
+    color: white; /* Text color: white for contrast against red background */
+    font-size: 1.8rem; /* Increase font size slightly */
+    text-align: center; /* Center the text within the box */
+    text-shadow: 1px 1px 2px black; /* Add a black text shadow for better readability */
+}
+
