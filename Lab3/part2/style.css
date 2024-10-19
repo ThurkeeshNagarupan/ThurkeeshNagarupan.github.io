@@ -1,16 +1,30 @@
-p {
-  width: 200px;
-  height: 50px;
-  line-height: 2.5;
-  text-align: center;
-  font-size: 1.8rem;
-}
 html {
-  font-family: sans-serif;
-  font-size: 10px;
-background: #c70000;
-color: #ef0404;
-border-radius: 8px;
-border: 1px solid #6f0000;
+    font-family: sans-serif;
+    font-size: 16px; 
+}
 
+/* Your CSS below here */
+body {
+    background-color: #f0f0f0; 
+}
+
+div {
+    width: 200px; /* This is the width for the large box */
+    height: 100px; /* This is the  height for the large box */
+    margin: 0 auto; /* This basically centers the box horizontally */
+    display: flex; /* This uses the flexbox to center text vertically and horizontally */
+    justify-content: center; /* This Centers text horizontally */
+    align-items: center; /* This Centers text vertically */
+    font-size: 1.125rem; 
+    background-color: rgb(212, 7, 7);
+    color: #ffffff; 
+    text-shadow: 1px 1px 2px black; 
+    border-radius: 8px; 
+    border: 1px solid #b30000; 
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.2) 100%), red;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 
+    inset 0px 2px 4px rgba(255, 255, 255, 0.4), 
+    inset 0px -2px 4px rgba(0, 0, 0, 0.3); 
+    
+ 
 }
