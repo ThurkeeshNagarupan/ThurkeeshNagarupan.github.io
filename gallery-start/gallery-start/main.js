@@ -13,7 +13,7 @@ const alts = {
   'pic3.jpg': 'Purple and white pansies',
   'pic4.jpg': 'Section of wall from a pharoah\'s tomb',
   'pic5.jpg': 'Large moth on a leaf'
-}
+};
 /* Declaring the alternative text for each image file */
 
 /* Looping through images */
@@ -22,7 +22,7 @@ const newImage = document.createElement('img');
 newImage.setAttribute('src', `images/${image}`);
 newImage.setAttribute('alt', alts[image]);
 thumbBar.appendChild(newImage);
-new Image.addEventListener('click', e => {
+newImage.addEventListener('click', e => {
   displayedImage.src = e.target.src;
   displayedImage.alt = e.target.alt;
   });
@@ -41,4 +41,4 @@ btn.addEventListener('click', () => {
     btn.textContent = 'Darken';
     overlay.style.backgroundColor = 'rgba(0,0,0,0)';
   }
-}};
+};
