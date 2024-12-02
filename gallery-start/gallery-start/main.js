@@ -17,10 +17,16 @@ const alts = {
 /* Declaring the alternative text for each image file */
 
 /* Looping through images */
-
+for (const image of images) {
 const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
+newImage.setAttribute('src', `images/${image}`);
+newImage.setAttribute('alt', alts[image]);
 thumbBar.appendChild(newImage);
+new Image.addEventListener('click', e => {
+  displayedImage.src = e.target.src;
+  displayedImage.alt = e.target.alt;
+  });
+}
 
 /* Wiring up the Darken/Lighten button */
+
