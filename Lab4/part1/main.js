@@ -42,7 +42,7 @@ newStory = newStory
     centigrade`;
     newStory = newStory
                 .replace("300 pounds", weight)
-                .replace("34 fahrenheit", temperature);
+                .replace("94 fahrenheit", temperature);
   }
 
   story.textContent = newStory;
