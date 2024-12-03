@@ -77,6 +77,24 @@ class EvilCircle {
     window.addEventListener("keydown", (e) => this.setControls(e));
   }
 
+  draw() {
+    ctx.beginPath();
+    ctx.strokeStyle = this.color;
+    ctx.lineWidth = 3;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.stroke();
+  }
+setControls(e) {
+    if (e.key === "ArrowUp") {
+      this.y -= this.velY;
+    } else if (e.key === "ArrowDown") {
+      this.y += this.velY;
+    } else if (e.key === "ArrowLeft") {
+      this.x -= this.velX;
+    } else if (e.key === "ArrowRight") {
+      this.x += this.velX;
+    }
+  }
 const balls = [];
 
 while (balls.length < 25) {
