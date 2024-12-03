@@ -116,11 +116,6 @@ function loop() {
   ctx.fillStyle = 'rgba(0,0,0,0.25)';
   ctx.fillRect(0,0,width,height);
 
-  while(balls.length < 25) {
-    const ball = new Ball();
-    balls.push(ball);
-  }
-
   for (const ball of balls) {
     ball.draw();
     ball.update();
