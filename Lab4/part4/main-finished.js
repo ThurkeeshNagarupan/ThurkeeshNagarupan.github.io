@@ -27,7 +27,7 @@ class Ball {
     this.color = color;
     this.size = size;
     this.exists = true; // New property to check if the ball is "alive"
-  }
+  
   }
 
   draw() {
