@@ -64,19 +64,33 @@ update() {
 
 // define ball collision detection
 
-Ball.prototype.collisionDetect = function() {
-  for (const ball of balls) {
-    if ( (!(this.x === ball.x && this.y === ball.y && this.velX === ball.velX && this.velY === ball.velY)) ) {
-      const dx = this.x - ball.x;
-      const dy = this.y - ball.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
+collisionDetect() {
+    for (const ball of balls) {
+      if (!(this === ball)) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
 
-      if (distance < this.size + ball.size) {
-        ball.color = this.color =  randomRGB();
+        if (distance < this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
       }
     }
   }
-};
+}
+
+const balls = [];
+
+while (balls.length < 25) {
+  const size = random(10, 20);
+  const ball = new Ball(
+    random(0 + size, width - size),
+    random(0 + size, height - size),
+    random(-7, 7),
+    random(-7, 7),
+    randomRGB(),
+    size
+  );
 
 // define array to store balls
 
