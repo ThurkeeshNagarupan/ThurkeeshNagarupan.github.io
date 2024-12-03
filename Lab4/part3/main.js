@@ -20,14 +20,15 @@ function randomRGB() {
 
 // define Ball constructor
 
-function Ball() {
-  this.x = random(0,width);
-  this.y = random(0,height);
-  this.velX = random(-7,7);
-  this.velY = random(-7,7);
-  this.color = randomRGB();
-  this.size = random(10,20);
-}
+class Ball {
+  constructor(x, y, velX, velY, color, size) {
+    this.x = x;
+    this.y = y;
+    this.velX = velX;
+    this.velY = velY;
+    this.color = color;
+    this.size = size;
+  }
 
 // define ball draw method
 
