@@ -95,6 +95,48 @@ setControls(e) {
       this.x += this.velX;
     }
   }
+ checkBounds() {
+    if (this.x - this.size < 0) {
+      this.x = this.size;
+    }
+    if (this.x + this.size > width) {
+      this.x = width - this.size;
+    }
+    if (this.y - this.size < 0) {
+      this.y = this.size;
+    }
+    if (this.y + this.size > height) {
+      this.y = height - this.size;
+    }
+  }
+ collisionDetect() {
+    for (const ball of balls) {
+      if (ball.exists) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.size + ball.size) {
+          ball.exists = false; // "Eat" the ball
+        }
+      }
+    }
+  }
+}
+// Initialize balls
+const balls = [];
+while (balls.length < 25) {
+  const size = random(10, 20);
+  const ball = new Ball(
+    random(size, width - size),
+    random(size, height - size),
+    random(-7, 7),
+    random(-7, 7),
+    randomRGB(),
+    size
+  );
+  balls.push(ball);
+}
 const balls = [];
 
 while (balls.length < 25) {
