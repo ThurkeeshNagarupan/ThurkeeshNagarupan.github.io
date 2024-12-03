@@ -38,21 +38,12 @@ class Ball {
       ctx.fill();
     }
   }
-  update() {
-    if (this.x + this.size >= width) {
-      this.velX = -Math.abs(this.velX);
+ update() {
+    if (this.x + this.size >= width || this.x - this.size <= 0) {
+      this.velX = -this.velX;
     }
-
-    if (this.x - this.size <= 0) {
-      this.velX = Math.abs(this.velX);
-    }
-
-    if (this.y + this.size >= height) {
-      this.velY = -Math.abs(this.velY);
-    }
-
-    if (this.y - this.size <= 0) {
-      this.velY = Math.abs(this.velY);
+    if (this.y + this.size >= height || this.y - this.size <= 0) {
+      this.velY = -this.velY;
     }
 
     this.x += this.velX;
@@ -61,7 +52,7 @@ class Ball {
 
   collisionDetect() {
     for (const ball of balls) {
-      if (!(this === ball)) {
+      if (this !== ball && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -73,6 +64,18 @@ class Ball {
     }
   }
 }
+// EvilCircle class
+class EvilCircle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.velX = 20;
+    this.velY = 20;
+    this.color = "white";
+    this.size = 10;
+
+    window.addEventListener("keydown", (e) => this.setControls(e));
+  }
 
 const balls = [];
 
