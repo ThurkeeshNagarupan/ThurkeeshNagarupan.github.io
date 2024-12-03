@@ -137,23 +137,8 @@ while (balls.length < 25) {
   );
   balls.push(ball);
 }
-const balls = [];
-
-while (balls.length < 25) {
-  const size = random(10, 20);
-  const ball = new Ball(
-    // ball position always drawn at least one ball width
-    // away from the edge of the canvas, to avoid drawing errors
-    random(0 + size, width - size),
-    random(0 + size, height - size),
-    random(-7, 7),
-    random(-7, 7),
-    randomRGB(),
-    size
-  );
-
-  balls.push(ball);
-}
+// Initialize EvilCircle
+const evilCircle = new EvilCircle(random(0, width), random(0, height));
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
@@ -164,8 +149,19 @@ function loop() {
     ball.update();
     ball.collisionDetect();
   }
-
-  requestAnimationFrame(loop);
+  
+  evilCircle.draw();
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect();
+  
+if (balls.some((ball) => ball.exists)) {
+    requestAnimationFrame(loop); // Keep looping if balls remain
+  } else {
+    ctx.fillStyle = "white";
+    ctx.font = "48px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText("All balls eaten!", width / 2, height / 2);
+  }
 }
 
 loop();
