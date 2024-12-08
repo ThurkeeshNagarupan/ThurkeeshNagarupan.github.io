@@ -45,3 +45,14 @@ function submitComment() {
   nameField.value = '';
   commentField.value = '';
 }
+document.querySelector('.show-hide').addEventListener('click', function () {
+    const commentWrapper = document.querySelector('.comment-wrapper');
+    if (commentWrapper.style.display === 'none' || !commentWrapper.style.display) {
+        commentWrapper.style.display = 'block';
+        this.textContent = 'Hide comments';
+    } else {
+        commentWrapper.style.display = 'none';
+        this.textContent = 'Show comments';
+    }
+});
+
