@@ -29,7 +29,7 @@ p, input, li, table, label {
    color: #1a1a1a;
 }
 
-font[size="7"] {
+.title-large {
   font-size: 4rem;
   text-align: center;
   color: white;
@@ -66,7 +66,7 @@ article {
 
 div[class="nav"] {
   height: 50px;
-  background-color: ff80ff;
+  background-color: #e91e63;
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
@@ -174,7 +174,7 @@ audio {
 /* Comments styling */
 
 .comments {
-  background-color: #def;
+  background-color: #cce7ff;
   padding: 10px;
 }
 
