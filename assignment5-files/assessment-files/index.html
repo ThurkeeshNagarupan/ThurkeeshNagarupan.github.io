@@ -5,176 +5,138 @@ Date: 10th December 2024
 Course: INFT1206
 -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible website example">
+  <title>Accessible Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #ffffff;
+      color: #333333;
+    }
+    nav {
+      background-color: #005a9c;
+      color: #ffffff;
+      padding: 10px;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    nav a:focus {
+      outline: 2px solid #ffdd57;
+    }
+    .audio-player {
+      margin-top: 20px;
+    }
+    .comments {
+      margin-top: 20px;
+    }
+    .comments button {
+      background-color: #007acc;
+      color: #ffffff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .comments button:focus {
+      outline: 2px solid #ffdd57;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Accessible Webpage</h1>
+  </header>
 
-    <title>Accessibility assessment</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css">
+  <nav aria-label="Main navigation">
+    <a href="#audio">Audio</a>
+    <a href="#table">Table</a>
+    <a href="#comments">Comments</a>
+  </nav>
 
-    <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
+  <main>
+    <section id="audio" class="audio-player">
+      <h2>Audio Player</h2>
+      <p>Listen to this audio clip:</p>
+      <audio controls aria-label="Sample audio">
+        <source src="audio/sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element. <a href="audio/sample.mp3">Download the audio</a>.
+      </audio>
+      <p>Transcript: This is a sample audio description for accessibility testing.</p>
+    </section>
 
-  <body>
-    <div class="header">
-      <font size="7">Welcome to our wildlife website</font>
-    </div>
+    <section id="table">
+      <h2>Data Table</h2>
+      <p>The following table shows sample data:</p>
+      <table>
+        <caption>Sample Data Table</caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>30</td>
+            <td>New York</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>25</td>
+            <td>California</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    <div class="nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our team</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Blog</a></li>
+    <section id="comments" class="comments">
+      <h2>Comments</h2>
+      <button onclick="toggleComments()" aria-expanded="false">Show Comments</button>
+      <ul id="comments-list" style="display: none;">
+        <li>Great content!</li>
+        <li>Very helpful.</li>
       </ul>
+    </section>
+  </main>
 
-      <form class="search">
-        <input type="search" name="q" placeholder="Search query">
-        <input type="submit" value="Go!">
-      </form>
-    </div>
+  <footer>
+    <p>&copy; 2024 Accessible Webpage</p>
+  </footer>
 
-    <main>
-      <article>
-        <font size="6">The trouble with Bears</font>
-        <br><br>
-        By Evan Wild
-        <br><br>
-        Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary, The Jungle Book.
-        <br><br>
-        So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article we try to answer those questions, and give you a real insight into the life of the bear.
-        <br><br>
-        <font size="5">Types of bear</font>
-        <br><br>
-        Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.
-        <br><br>
-        Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourange different behaviour however, as you'll find out below. The below table also gives you some useful facts about bears.
-        <br><br>
-        <table>
-          <thead>
-            <tr>
-              <td>Bear Type</td>
-              <td>Coat</td>
-              <td>Adult size</td>
-              <td>Habitat</td>
-              <td>Lifespan</td>
-              <td>Diet</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Wild</td>
-              <td>Brown or black</td>
-              <td>1.4 to 2.8 meters</td>
-              <td>Woods and forests</td>
-              <td>25 to 28 years</td>
-              <td>Fish, meat, plants</td>
-            </tr>
-            <tr>
-              <td>Urban</td>
-              <td>North Face</td>
-              <td>18 to 22</td>
-              <td>Condos and coffee shops</td>
-              <td>20 to 32 years</td>
-              <td>Starbucks, sushi</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <font size="5">Habitats and Eating habits</font>
-        <br><br>
-        Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they will hunt for food themselves in woodland or rivers, but at a push they will track down their sustenance from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.
-        <br><br>
-        <img src="media/wild-bear.jpg">
-        <br><br>
-        Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if necessary (including other predators like rats and foxes), but prefer to scavenge from readily available urban food outlets like dumpsters, bins, and fast food joints. When food has proven scarce, urban bears have even been known to break into people's kitchens and steal essentials like baked beans, ready meals, and microwave ovens.
-        <br><br>
-        <img src="media/urban-bear.jpg">
-        <br><br>
-        Urban bears will sleep anywhere they can, from bus shelters and parks, to the toilets in McDonalds, to their own apartment.
-        <br><br>
-        <font size="5">Mating rituals</font>
-        <br><br>
-        Bears are romantic creatures by nature, and will naturally look for a mate that they can spend the rest of their lives with. They will woo a potential suitor by making their dwelling look attractive — for example with cave paintings or a bed of reeds in the case of a wild bear, and mood lighting and a Michael Bublé CD in the case of an urban bear.
-        <br><br>
-        The following audio clip contains a fact file providing more details about bear mating rituals, along with samples and quotes from experts.
-        <br><br>
-        <audio controls>
-          <source src="media/bear.mp3" type="audio/mp3">
-          <source src="media/bear.ogg" type="audio/ogg">
-          <p>It looks like your browser doesn't support HTML5 audio players.</p>
-        </audio>
-
-        <aside>
-
-          <font size="5">About the author</font>
-        <br><br>
-          Evan Wild is an unemployed plumber from Doncaster, who has been really "in to" wildlife since childhood. He once went to Chester Zoo on holiday, but got ill after eating a doner kebab.
-        <br><br>
-          He has never seen a bear, but once read a Daily Mail article about them, and thinks they sound cool.
-
-        </aside>
-        <section class="comments">
-          <div class="show-hide">Show comments</div>
-
-          <div class="comment-wrapper">
-
-            <font size="6">Add comment</font>
-
-            <form class="comment-form">
-              <div class="flex-pair">
-                Your name:
-                <input type="text" name="name" id="name" placeholder="Enter your name">
-              </div>
-              <div class="flex-pair">
-                Your comment:
-                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
-              </div>
-              <div>
-                <input type="submit" value="Submit comment">
-              </div>
-            </form>
-
-            <font size="6">Comments</font>
-
-            <ul class="comment-container">
-
-              <li>
-
-                <p>Bob Fossil</p>
-
-                <p>Oh I am so glad you taught me all about the big brown angry guys in the woods. With their sniffing little noses and their bad attitudes, they can sure be a menace — I was thinking of putting them all in a truck and driving them outta here. I run a zoo, you know.</p>
-
-              </li>
-
-            </ul>
-
-          </div>
-        </section>
-      </article>
-
-      <div class="secondary">
-        <font size="6">Related</font>
-
-        <ul>
-          <li><a href="#">The trouble with Bees</a></li>
-          <li><a href="#">The trouble with Otters</a></li>
-          <li><a href="#">The trouble with Penguins</a></li>
-          <li><a href="#">The trouble with Octopi</a></li>
-          <li><a href="#">The trouble with Lemurs</a></li>
-        </ul>
-      </div>
-    </main>
-
-    <footer>
-      <p>©Copyright 2050 by nobody. All rights reversed.</p>
-    </footer>
-
-    <script src="main.js"></script>
-
-  </body>
+  <script>
+    function toggleComments() {
+      const commentsList = document.getElementById('comments-list');
+      const button = document.querySelector('.comments button');
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      commentsList.style.display = isExpanded ? 'none' : 'block';
+      button.setAttribute('aria-expanded', !isExpanded);
+      button.textContent = isExpanded ? 'Show Comments' : 'Hide Comments';
+    }
+  </script>
+</body>
 </html>
