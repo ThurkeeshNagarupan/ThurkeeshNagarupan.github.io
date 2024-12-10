@@ -11,12 +11,25 @@ html {
 }
 
 body {
-  width: 80%;
-  min-width: 1024px;
-  margin: 0 auto;
-  color: #333; 
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #dde; /* Matches header background */
+  color: #333;
 }
 
+ header {
+  background-color: #dde; /* Light purple background */
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-family: 'Brush Script MT', cursive; /* For stylish font */
+  font-size: 4rem; /* Large text */
+  color: white;
+  text-shadow: 2px 2px 5px black; /* Subtle shadow for depth */
+  margin: 0;
+}
 /* || typography */
 
 .title-large {
@@ -61,65 +74,185 @@ article {
 }
 
 .nav {
-  height: 50px;
-  background-color: #e91e63;
   display: flex;
-  padding: 1% 0;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .nav ul {
-  padding: 0;
-  list-style-type: none;
-  flex: 2;
   display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav li {
-  display: inline;
-  text-align: center;
-  flex: 1;
+  margin: 0 15px;
 }
 
 .nav a {
-  display: inline-block;
-  font-size: 2rem;
-  text-transform: uppercase;
   text-decoration: none;
-  color: black;
+  font-size: 1.6rem;
+  color: #333;
+  transition: color 0.3s ease;
 }
 
-.nav .search {
-  flex: 1;
+.nav a:hover {
+  color: #4CAF50; /* Green on hover */
+}
+
+.search {
   display: flex;
   align-items: center;
-  height: 100%;
-  padding: 0 2em;
 }
 
-.search input {
-  flex: 3;
-  font-size: 1.6rem;
-  height: 32px;
+.search input[type="text"] {
+  padding: 5px;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .search input[type="submit"] {
-  flex: 1;
-  margin-left: 1rem;
-  background: #333;
-  border: 0;
+  background-color: black;
   color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
   cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.search input[type="submit"]:hover {
+  background-color: #4CAF50;
 }
 
 /* || main layout */
 
-main {
+
+To help you replicate the design shown in the screenshot, here's a step-by-step CSS guide to achieve the look. I'll break it into key areas like the header, navigation, content, and sidebar styling.
+
+1. Header Styling
+The header has a bold, shadowed text with centered alignment.
+
+css
+Copy code
+header {
+  background-color: #dde; /* Light purple background */
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-family: 'Brush Script MT', cursive; /* For stylish font */
+  font-size: 4rem; /* Large text */
+  color: white;
+  text-shadow: 2px 2px 5px black; /* Subtle shadow for depth */
+  margin: 0;
+}
+2. Navigation Bar
+The navigation bar is horizontal, centered, and clean.
+
+css
+Copy code
+.nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin: 0 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #4CAF50; /* Green on hover */
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input[type="text"] {
+  padding: 5px;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search input[type="submit"] {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.search input[type="submit"]:hover {
+  background-color: #4CAF50;
+}
+3. Main Content Layout
+Divide the layout into a main article and a sidebar using CSS Grid.
+
+css
+Copy code
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* 3:1 ratio for content and sidebar */
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
 article {
-  flex: 5;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+  font-family: 'Georgia', serif; /* Serif font for headings */
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+article p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+article h3 {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .secondary {
