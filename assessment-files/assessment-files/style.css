@@ -10,221 +10,67 @@ html {
   background-color: #dde;
 }
 
+/* General Reset */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #dde; /* Matches header background */
-  color: #333;
-}
-
- header {
-  background-color: #dde; /* Light purple background */
-  text-align: center;
-  padding: 20px 0;
-}
-
-header h1 {
-  font-family: 'Brush Script MT', cursive; /* For stylish font */
-  font-size: 4rem; /* Large text */
-  color: white;
-  text-shadow: 2px 2px 5px black; /* Subtle shadow for depth */
-  margin: 0;
-}
-/* || typography */
-
-.title-large {
-  font-size: 4rem;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 10px black;
-}
- .subtitle, .section-heading {
-  font-size: 3rem;
-  color: #2a2a2a;
-}
-.text-size-6 {
-  font-size: 3rem;
-  text-align: center;
-}
-
-.text-size-5 {
-  font-size: 2.2rem;
-}
- p, input, li, table, label {
   font-family: 'Open Sans Condensed', sans-serif;
-  color: #1a1a1a;
-}
-p, li, table {
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
-/* || header layout */
-
-.nav, article, footer, .secondary {
-   background-color: #4CAF50;
-}
-
-article, footer, .secondary {
-  padding: 10px 30px;
-}
-
-article {
-  margin-right: 10px;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav li {
-  margin: 0 15px;
-}
-
-.nav a {
-  text-decoration: none;
-  font-size: 1.6rem;
+  background-color: #f5f5f5;
   color: #333;
-  transition: color 0.3s ease;
 }
 
-.nav a:hover {
-  color: #4CAF50; /* Green on hover */
-}
-
-.search {
-  display: flex;
-  align-items: center;
-}
-
-.search input[type="text"] {
-  padding: 5px;
-  font-size: 1.4rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.search input[type="submit"] {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin-left: 5px;
-  cursor: pointer;
-  font-size: 1.4rem;
-}
-
-.search input[type="submit"]:hover {
-  background-color: #4CAF50;
-}
-
-/* || main layout */
-
-
-To help you replicate the design shown in the screenshot, here's a step-by-step CSS guide to achieve the look. I'll break it into key areas like the header, navigation, content, and sidebar styling.
-
-1. Header Styling
-The header has a bold, shadowed text with centered alignment.
-
-css
-Copy code
+/* Header Styling */
 header {
-  background-color: #dde; /* Light purple background */
+  background-color: #dde;
+  padding: 20px;
   text-align: center;
-  padding: 20px 0;
+  font-size: 2.5rem;
+  font-family: 'Brush Script MT', cursive;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-  font-family: 'Brush Script MT', cursive; /* For stylish font */
-  font-size: 4rem; /* Large text */
-  color: white;
-  text-shadow: 2px 2px 5px black; /* Subtle shadow for depth */
-  margin: 0;
-}
-2. Navigation Bar
-The navigation bar is horizontal, centered, and clean.
-
-css
-Copy code
-.nav {
+/* Navigation Bar */
+nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav li {
-  margin: 0 15px;
-}
-
-.nav a {
-  text-decoration: none;
-  font-size: 1.6rem;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.nav a:hover {
-  color: #4CAF50; /* Green on hover */
-}
-
-.search {
-  display: flex;
-  align-items: center;
-}
-
-.search input[type="text"] {
-  padding: 5px;
-  font-size: 1.4rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.search input[type="submit"] {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin-left: 5px;
-  cursor: pointer;
-  font-size: 1.4rem;
-}
-
-.search input[type="submit"]:hover {
+  justify-content: center;
   background-color: #4CAF50;
+  padding: 10px 0;
 }
-3. Main Content Layout
-Divide the layout into a main article and a sidebar using CSS Grid.
 
-css
-Copy code
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  color: #333;
+}
+
+/* Search Bar */
+nav input[type="text"] {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+nav input[type="submit"] {
+  padding: 5px 10px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+nav input[type="submit"]:hover {
+  background-color: #ddd;
+}
+
+/* Main Content */
 main {
   display: grid;
-  grid-template-columns: 3fr 1fr; /* 3:1 ratio for content and sidebar */
+  grid-template-columns: 3fr 1fr;
   gap: 20px;
   padding: 20px;
-  background-color: #f9f9f9;
 }
 
 article {
@@ -234,149 +80,81 @@ article {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-article h2 {
-  font-family: 'Georgia', serif; /* Serif font for headings */
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+aside {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-article p {
-  font-size: 1.6rem;
-  line-height: 1.8;
-  color: #333;
-}
-
-article h3 {
-  font-family: 'Georgia', serif;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.secondary {
-  flex: 2;
-}
-
-footer {
-  margin-top: 10px;
-}
-
-/* Table styling */
-
+/* Table Styling */
 table {
   width: 100%;
-  background-color: #dde;
   border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
 th, td {
   padding: 10px;
 }
 
-td {
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Comments Section */
+.comments {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #cce7ff;
+  border-radius: 8px;
+}
+
+.comments h2 {
+  font-size: 1.5rem;
+}
+
+.comments form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments input, .comments textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.comments input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comments input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Footer */
+footer {
   text-align: center;
+  padding: 20px;
+  background-color: #dde;
+  margin-top: 20px;
 }
 
-th[scope="col"] {
-  border-bottom: 1px solid black;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #def;
-}
-
-/* styling content images and audio */
-
+/* Responsive Images and Audio */
 img, audio {
   display: block;
-  margin: 0 auto;
-}
-
-audio {
-  width: 500px;
-}
-
-/* Comments styling */
-
-.comments {
-  background-color: #cce7ff;
-  padding: 10px;
-}
-
-.show-hide {
-  cursor: pointer;
-}
-
-.comments font[size="6"] {
-  font-size: 2rem;
-}
-
-.comments font[size="6"]:nth-of-type(2) {
-  margin-bottom: 0;
-}
-
-.comment-form {
-  margin-bottom: 3rem;
-}
-
-.comment-form .flex-pair {
-  display: flex;
-  padding: 0 3rem 1rem;
-}
-
-.comment-form label {
-  align-self: center;
-  flex: 2;
-  text-align: right;
-}
-
-.comment-form input {
-  margin-left: 1rem;
-  flex: 6;
-}
-
-.show-hide {
-  text-align: center;
-  width: 150px;
-}
-
-.comment-form input, .comment-form label, .show-hide {
-  font-size: 1.6rem;
-  line-height: 32px;
-}
-
-.comment-form input[type="submit"], .show-hide {
-  background: #333;
-  border: 0;
-  color: white;
-}
-
-.comment-form input[type="submit"] {
-  width: 30%;
-  display: block;
-  margin: 0 auto;
-}
-
-.comment-container {
-  margin-top: 0;
-}
-
-.comment-container li {
-  list-style-type: none;
-  display: flex;
-}
-
-.comment-container li p:nth-child(1) {
-  flex: 1;
-  font-weight: bold;
-}
-
-.comment-container li p:nth-child(2) {
-  flex: 5;
-}
-a:focus, input:focus, button:focus {
-  outline: 2px solid #4CAF50;
-  outline-offset: 2px;
+  margin: 10px auto;
+  max-width: 100%;
+  height: auto;
 }
