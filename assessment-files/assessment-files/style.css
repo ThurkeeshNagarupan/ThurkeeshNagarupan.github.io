@@ -3,154 +3,192 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Accessibility troubleshooting example">
-  <title>Accessibility Example</title>
+  <title>Wildlife Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Sonsie+One&display=swap" rel="stylesheet">
   <style>
-    /* General Reset */
-    * {
+    /* General setup */
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      font-size: 10px;
+      background-color: #dde;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f9f9f9;
-      margin: 20px;
+      width: 90%;
+      min-width: 1024px;
+      margin: 0 auto;
     }
 
-    header {
-      background-color: #004466;
+    /* Typography */
+    h1, h2, h3 {
+      font-family: 'Sonsie One', cursive;
+      color: #2a2a2a;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
       color: white;
-      padding: 1rem;
+      text-shadow: 2px 2px 10px black;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 2.2rem;
+    }
+
+    p, li, input, label {
+      font-family: 'Open Sans Condensed', sans-serif;
+      color: #2a2a2a;
+      font-size: 1.6rem;
+      line-height: 1.5;
+    }
+
+    /* Header styling */
+    header {
+      background-color: #6c757d;
+      padding: 20px 0;
       text-align: center;
     }
 
+    header h1 {
+      margin: 0;
+    }
+
+    /* Navigation bar */
     nav {
-      margin: 1rem 0;
-      text-align: center;
+      background-color: #ff80ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      margin-bottom: 20px;
     }
 
     nav ul {
       list-style: none;
-      display: inline-flex;
-      gap: 1rem;
+      display: flex;
+      margin: 0;
+      padding: 0;
     }
 
-    nav a {
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
       text-decoration: none;
+      font-size: 2rem;
+      color: black;
+      text-transform: uppercase;
+    }
+
+    nav .search {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .search input[type="search"] {
+      font-size: 1.6rem;
+      padding: 5px;
+      flex: 3;
+    }
+
+    nav .search input[type="submit"] {
+      margin-left: 10px;
+      background-color: #333;
       color: white;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      background-color: #006688;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      border: none;
+      font-size: 1.6rem;
+      padding: 5px 10px;
+      cursor: pointer;
     }
 
-    nav a:hover,
-    nav a:focus {
-      background-color: #004466;
-    }
-
+    /* Layout */
     main {
       display: flex;
-      gap: 2rem;
-      margin: 2rem 0;
     }
 
     article {
       flex: 3;
-      padding: 1rem;
-      background-color: #e6f2f7;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      background-color: white;
+      margin-right: 10px;
     }
 
     aside {
       flex: 1;
-      padding: 1rem;
-      background-color: #f2f8fa;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      background-color: #f8f9fa;
     }
 
     footer {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #6c757d;
       text-align: center;
-      padding: 1rem;
-      background-color: #004466;
       color: white;
-      margin-top: 2rem;
     }
 
-    .search {
-      margin-top: 1rem;
-      text-align: center;
+    /* Related links */
+    aside ul {
+      list-style: none;
+      padding: 0;
     }
 
-    .search input[type="search"] {
-      padding: 0.5rem;
-      font-size: 1rem;
-      width: 200px;
-      margin-right: 0.5rem;
+    aside ul li {
+      margin: 10px 0;
     }
 
-    .search input[type="submit"] {
-      padding: 0.5rem 1rem;
-      background-color: #006688;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .search input[type="submit"]:hover {
-      background-color: #004466;
+    aside ul li a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 1.6rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to the Accessibility Example</h1>
-    <p>Learn how to build accessible and user-friendly web pages.</p>
+    <h1>Welcome to our wildlife website</h1>
   </header>
-
   <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Our Team</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Blog</a></li>
     </ul>
+    <div class="search">
+      <input type="search" placeholder="Search query">
+      <input type="submit" value="Go!">
+    </div>
   </nav>
-
-  <div class="search">
-    <form role="search" aria-label="Site Search">
-      <label for="search">Search:</label>
-      <input type="search" id="search" name="search" placeholder="Type to search...">
-      <input type="submit" value="Go">
-    </form>
-  </div>
-
   <main>
-    <article id="home">
-      <h2>Main Content</h2>
-      <p>This is the main area where the primary content of the page is displayed. Ensure this area is always easy to read and navigate for users.</p>
+    <article>
+      <h2>The trouble with Bears</h2>
+      <p>By Evan Wild</p>
+      <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary *The Jungle Book*.</p>
+      <p>So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article we try to answer those questions and give you a real insight into the life of the bear.</p>
+      <h3>Types of bear</h3>
+      <p>Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.</p>
     </article>
-
     <aside>
-      <h2>Related Links</h2>
+      <h3>Related</h3>
       <ul>
-        <li><a href="#">Accessibility Guidelines</a></li>
-        <li><a href="#">Best Practices</a></li>
-        <li><a href="#">Learn More</a></li>
+        <li><a href="#">The trouble with Bees</a></li>
+        <li><a href="#">The trouble with Otters</a></li>
+        <li><a href="#">The trouble with Penguins</a></li>
+        <li><a href="#">The trouble with Octopi</a></li>
+        <li><a href="#">The trouble with Lemurs</a></li>
       </ul>
     </aside>
   </main>
-
   <footer>
-    <p>&copy; 2024 Accessibility Troubleshooting. All rights reserved.</p>
+    <p>&copy; 2024 Wildlife Website</p>
   </footer>
 </body>
 </html>
