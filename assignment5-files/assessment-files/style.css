@@ -11,12 +11,14 @@ header {
   background: #e0e4ff;
   text-align: center;
   padding: 20px 0;
-  font-size: 2rem;
-  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  font-family: 'Pacifico', cursive; /* Decorative font */
   font-weight: bold;
-  text-shadow: 1px 1px 2px #aaa;
+  color: #fff;
+  text-shadow: 2px 2px 4px #aaa; /* Embossed effect */
 }
 
+/* Navigation Bar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -60,6 +62,7 @@ nav ul li a {
   cursor: pointer;
 }
 
+/* Main Content Layout */
 main {
   display: flex;
   margin: 20px;
@@ -73,6 +76,17 @@ article {
   border-radius: 5px;
 }
 
+article h1 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+article p {
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
 aside {
   flex: 1;
   background: #fff;
@@ -83,6 +97,9 @@ aside {
 }
 
 aside h3 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1.3rem;
+  color: #333;
   margin-top: 0;
 }
 
@@ -98,8 +115,14 @@ aside ul li {
 aside ul li a {
   text-decoration: none;
   color: #4b4ba7;
+  font-weight: bold;
 }
 
+aside ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 15px 0;
