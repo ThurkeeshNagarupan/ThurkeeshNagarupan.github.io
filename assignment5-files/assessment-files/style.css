@@ -1,139 +1,109 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Accessibility Assessment</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="style.css">
-</head>
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+  color: #333;
+}
 
-<body>
-  <header>
-    <h1>Welcome to our wildlife website</h1>
-  </header>
+header {
+  background: #e0e4ff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 2rem;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #aaa;
+}
 
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Our team</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4b4ba7;
+  padding: 10px 20px;
+  color: white;
+}
 
-    <form class="search" aria-label="Search the site">
-      <label for="search" class="sr-only">Search query</label>
-      <input type="search" id="search" name="q" placeholder="Search query">
-      <input type="submit" value="Go!">
-    </form>
-  </nav>
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 
-  <main>
-    <article>
-      <h2>The trouble with Bears</h2>
-      <p><strong>By Evan Wild</strong></p>
-      <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary, <em>The Jungle Book</em>.</p>
-      <p>So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article, we try to answer those questions and give you a real insight into the life of the bear.</p>
+nav ul li {
+  margin: 0 15px;
+}
 
-      <h3>Types of bear</h3>
-      <p>Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.</p>
-      <p>Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourage different behavior, as you'll find out below. The table below also gives you some useful facts about bears.</p>
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
 
-      <table>
-        <caption>Types of Bears and Their Characteristics</caption>
-        <thead>
-          <tr>
-            <th scope="col">Bear Type</th>
-            <th scope="col">Coat</th>
-            <th scope="col">Adult Size</th>
-            <th scope="col">Habitat</th>
-            <th scope="col">Lifespan</th>
-            <th scope="col">Diet</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Wild</td>
-            <td>Brown or black</td>
-            <td>1.4 to 2.8 meters</td>
-            <td>Woods and forests</td>
-            <td>25 to 28 years</td>
-            <td>Fish, meat, plants</td>
-          </tr>
-          <tr>
-            <td>Urban</td>
-            <td>North Face</td>
-            <td>1.8 to 2.2 meters</td>
-            <td>Condos and coffee shops</td>
-            <td>20 to 32 years</td>
-            <td>Starbucks, sushi</td>
-          </tr>
-        </tbody>
-      </table>
+.search {
+  display: flex;
+}
 
-      <h3>Habitats and Eating Habits</h3>
-      <p>Wild bears eat a variety of meat, fish, fruit, nuts, and other naturally growing ingredients. They tend to live in relative isolation, in caves, tents, or cottages.</p>
-      <figure>
-        <img src="media/wild-bear.jpg" alt="A wild bear in its natural habitat">
-        <figcaption>Wild Bear</figcaption>
-      </figure>
+.search input[type="search"] {
+  padding: 5px;
+  font-size: 1rem;
+}
 
-      <p>Urban bears have largely abandoned the old ways. They scavenge from urban food outlets like dumpsters, bins, and fast food joints. Urban bears will sleep anywhere they can, from bus shelters to parks or their own apartments.</p>
-      <figure>
-        <img src="media/urban-bear.jpg" alt="An urban bear roaming a city">
-        <figcaption>Urban Bear</figcaption>
-      </figure>
+.search button {
+  padding: 5px 10px;
+  background-color: white;
+  color: #4b4ba7;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-      <h3>Mating rituals</h3>
-      <p>Bears are romantic creatures by nature and will woo a potential suitor by making their dwelling look attractive. Wild bears use cave paintings, while urban bears might use mood lighting and a Michael Bublé CD.</p>
-      <audio controls>
-        <source src="media/bear.mp3" type="audio/mp3">
-        <source src="media/bear.ogg" type="audio/ogg">
-        <p>Your browser does not support the audio element.</p>
-      </audio>
-    </article>
+main {
+  display: flex;
+  margin: 20px;
+}
 
-    <aside>
-      <h3>About the author</h3>
-      <p>Evan Wild is an unemployed plumber from Doncaster, who has been "into" wildlife since childhood. He has never seen a bear but read a Daily Mail article about them and thinks they sound cool.</p>
-    </aside>
+article {
+  flex: 3;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
 
-    <section class="comments">
-      <button class="show-hide">Show comments</button>
-      <div class="comment-wrapper">
-        <h3>Add comment</h3>
-        <form class="comment-form">
-          <div class="flex-pair">
-            <label for="name">Your name:</label>
-            <input type="text" name="name" id="name" placeholder="Enter your name">
-          </div>
-          <div class="flex-pair">
-            <label for="comment">Your comment:</label>
-            <input type="text" name="comment" id="comment" placeholder="Enter your comment">
-          </div>
-          <button type="submit">Submit comment</button>
-        </form>
+aside {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  margin-left: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
 
-        <h3>Comments</h3>
-        <ul class="comment-container">
-          <li>
-            <p><strong>Bob Fossil:</strong> Oh I am so glad you taught me all about the big brown angry guys in the woods.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
+aside h3 {
+  margin-top: 0;
+}
 
-  <footer>
-    <p>©Copyright 2050 by nobody. All rights reserved.</p>
-  </footer>
-
-  <script src="main.js"></script>
-</body>
-</html>
-
-
-.comment-container li {
+aside ul {
   list-style-type: none;
-  padding: 1rem;
-  border-bottom: 1px solid #ccc;
+  padding: 0;
+}
+
+aside ul li {
+  margin-bottom: 10px;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: #4b4ba7;
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background: #4b4ba7;
+  color: white;
+  margin-top: 20px;
 }
