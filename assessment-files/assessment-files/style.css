@@ -1,194 +1,250 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wildlife Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Sonsie+One&display=swap" rel="stylesheet">
-  <style>
-    /* General setup */
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-size: 10px;
-      background-color: #dde;
-    }
+/* || General setup */
 
-    body {
-      width: 90%;
-      min-width: 1024px;
-      margin: 0 auto;
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
-    /* Typography */
-    h1, h2, h3 {
-      font-family: 'Sonsie One', cursive;
-      color: #2a2a2a;
-      text-align: center;
-    }
+html {
+  font-size: 10px;
+  background-color: #dde;
+}
 
-    h1 {
-      font-size: 4rem;
-      color: white;
-      text-shadow: 2px 2px 10px black;
-    }
+body {
+  width: 80%;
+  min-width: 1024px;
+  margin: 0 auto;
+}
 
-    h2 {
-      font-size: 3rem;
-    }
+/* || typography */
 
-    h3 {
-      font-size: 2.2rem;
-    }
+font[size="7"], font[size="6"], font[size="5"] {
+  font-family: 'Sonsie One', cursive;
+  color: #2a2a2a;
+}
 
-    p, li, input, label {
-      font-family: 'Open Sans Condensed', sans-serif;
-      color: #2a2a2a;
-      font-size: 1.6rem;
-      line-height: 1.5;
-    }
+p, input, li, table, label {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #2a2a2a;
+}
 
-    /* Header styling */
-    header {
-      background-color: #6c757d;
-      padding: 20px 0;
-      text-align: center;
-    }
+font[size="7"] {
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
 
-    header h1 {
-      margin: 0;
-    }
+font[size="6"] {
+  font-size: 3rem;
+  text-align: center;
+}
 
-    /* Navigation bar */
-    nav {
-      background-color: #ff80ff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      margin-bottom: 20px;
-    }
+font[size="5"] {
+  font-size: 2.2rem;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
+p, li, table {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
 
-    nav ul li {
-      margin: 0 10px;
-    }
+/* || header layout */
 
-    nav ul li a {
-      text-decoration: none;
-      font-size: 2rem;
-      color: black;
-      text-transform: uppercase;
-    }
+div[class="nav"], article, footer, .secondary {
+  background-color: green;
+}
 
-    nav .search {
-      display: flex;
-      align-items: center;
-    }
+article, footer, .secondary {
+  padding: 10px 30px;
+}
 
-    nav .search input[type="search"] {
-      font-size: 1.6rem;
-      padding: 5px;
-      flex: 3;
-    }
+article {
+  margin-right: 10px;
+}
 
-    nav .search input[type="submit"] {
-      margin-left: 10px;
-      background-color: #333;
-      color: white;
-      border: none;
-      font-size: 1.6rem;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
+div[class="nav"] {
+  height: 50px;
+  background-color: ff80ff;
+  display: flex;
+  padding: 1% 0;
+  margin-bottom: 10px;
+}
 
-    /* Layout */
-    main {
-      display: flex;
-    }
+div[class="nav"] ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
 
-    article {
-      flex: 3;
-      padding: 20px;
-      background-color: white;
-      margin-right: 10px;
-    }
+div[class="nav"] li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
 
-    aside {
-      flex: 1;
-      padding: 20px;
-      background-color: #f8f9fa;
-    }
+div[class="nav"] a {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
 
-    footer {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #6c757d;
-      text-align: center;
-      color: white;
-    }
+div[class="nav"] .search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+}
 
-    /* Related links */
-    aside ul {
-      list-style: none;
-      padding: 0;
-    }
+.search input {
+  font-size: 1.6rem;
+  height: 32px;
+}
 
-    aside ul li {
-      margin: 10px 0;
-    }
+.search input[type="search"] {
+  flex: 3;
+}
 
-    aside ul li a {
-      text-decoration: none;
-      color: #007bff;
-      font-size: 1.6rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Welcome to our wildlife website</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Our Team</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
-    <div class="search">
-      <input type="search" placeholder="Search query">
-      <input type="submit" value="Go!">
-    </div>
-  </nav>
-  <main>
-    <article>
-      <h2>The trouble with Bears</h2>
-      <p>By Evan Wild</p>
-      <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary *The Jungle Book*.</p>
-      <p>So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article we try to answer those questions and give you a real insight into the life of the bear.</p>
-      <h3>Types of bear</h3>
-      <p>Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.</p>
-    </article>
-    <aside>
-      <h3>Related</h3>
-      <ul>
-        <li><a href="#">The trouble with Bees</a></li>
-        <li><a href="#">The trouble with Otters</a></li>
-        <li><a href="#">The trouble with Penguins</a></li>
-        <li><a href="#">The trouble with Octopi</a></li>
-        <li><a href="#">The trouble with Lemurs</a></li>
-      </ul>
-    </aside>
-  </main>
-  <footer>
-    <p>&copy; 2024 Wildlife Website</p>
-  </footer>
-</body>
-</html>
+.search input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #333;
+  border: 0;
+  color: white;
+}
+
+/* || main layout */
+
+main {
+  display: flex;
+}
+
+article {
+  flex: 5;
+}
+
+.secondary {
+  flex: 2;
+}
+
+footer {
+  margin-top: 10px;
+}
+
+/* Table styling */
+
+table {
+  width: 100%;
+  background-color: #dde;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+}
+
+th[scope="col"] {
+  border-bottom: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #def;
+}
+
+/* styling content images and audio */
+
+img, audio {
+  display: block;
+  margin: 0 auto;
+}
+
+audio {
+  width: 500px;
+}
+
+/* Comments styling */
+
+.comments {
+  background-color: #def;
+  padding: 10px;
+}
+
+.show-hide {
+  cursor: pointer;
+}
+
+.comments font[size="6"] {
+  font-size: 2rem;
+}
+
+.comments font[size="6"]:nth-of-type(2) {
+  margin-bottom: 0;
+}
+
+.comment-form {
+  margin-bottom: 3rem;
+}
+
+.comment-form .flex-pair {
+  display: flex;
+  padding: 0 3rem 1rem;
+}
+
+.comment-form label {
+  align-self: center;
+  flex: 2;
+  text-align: right;
+}
+
+.comment-form input {
+  margin-left: 1rem;
+  flex: 6;
+}
+
+.show-hide {
+  text-align: center;
+  width: 150px;
+}
+
+.comment-form input, .comment-form label, .show-hide {
+  font-size: 1.6rem;
+  line-height: 32px;
+}
+
+.comment-form input[type="submit"], .show-hide {
+  background: #333;
+  border: 0;
+  color: white;
+}
+
+.comment-form input[type="submit"] {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+.comment-container {
+  margin-top: 0;
+}
+
+.comment-container li {
+  list-style-type: none;
+  display: flex;
+}
+
+.comment-container li p:nth-child(1) {
+  flex: 1;
+  font-weight: bold;
+}
+
+.comment-container li p:nth-child(2) {
+  flex: 5;
+}
