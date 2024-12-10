@@ -7,7 +7,7 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: #dde;
+  background-color: #ffffff; /* Improved contrast */
 }
 
 body {
@@ -16,31 +16,31 @@ body {
   margin: 0 auto;
 }
 
-/* || typography */
+/* || Typography */
 
-font[size="7"], font[size="6"], font[size="5"] {
+header h1, h2, h3, h4, h5, h6 {
   font-family: 'Sonsie One', cursive;
   color: #2a2a2a;
 }
 
 p, input, li, table, label {
   font-family: 'Open Sans Condensed', sans-serif;
-  color: #2a2a2a;
+  color: #333333;
 }
 
-font[size="7"] {
+header h1 {
   font-size: 4rem;
   text-align: center;
   color: white;
   text-shadow: 2px 2px 10px black;
 }
 
-font[size="6"] {
+h2 {
   font-size: 3rem;
   text-align: center;
 }
 
-font[size="5"] {
+h3 {
   font-size: 2.2rem;
 }
 
@@ -49,202 +49,132 @@ p, li, table {
   line-height: 1.5;
 }
 
-/* || header layout */
+/* || Layout */
 
-div[class="nav"], article, footer, .secondary {
-  background-color: green;
+nav, main, footer, aside {
+  background-color: #008000; /* Changed to darker green for contrast */
+  color: #ffffff;
 }
 
-article, footer, .secondary {
-  padding: 10px 30px;
-}
-
-article {
-  margin-right: 10px;
-}
-
-div[class="nav"] {
-  height: 50px;
-  background-color: ff80ff;
+nav {
   display: flex;
-  padding: 1% 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
   margin-bottom: 10px;
 }
 
-div[class="nav"] ul {
-  padding: 0;
+nav ul {
   list-style-type: none;
-  flex: 2;
   display: flex;
+  gap: 2rem;
+  padding: 0;
 }
 
-div[class="nav"] li {
-  display: inline;
-  text-align: center;
-  flex: 1;
-}
-
-div[class="nav"] a {
-  display: inline-block;
-  font-size: 2rem;
-  text-transform: uppercase;
+nav li a {
   text-decoration: none;
-  color: black;
+  font-size: 1.8rem;
+  color: #ffffff;
 }
 
-div[class="nav"] .search {
-  flex: 1;
+nav li a:focus,
+nav li a:hover {
+  text-decoration: underline;
+}
+
+.search {
   display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 2em;
-}
-
-.search input {
-  font-size: 1.6rem;
-  height: 32px;
+  gap: 1rem;
 }
 
 .search input[type="search"] {
-  flex: 3;
+  flex-grow: 1;
+  font-size: 1.6rem;
 }
 
 .search input[type="submit"] {
-  flex: 1;
-  margin-left: 1rem;
-  background: #333;
-  border: 0;
+  background-color: #333333;
   color: white;
+  border: none;
+  font-size: 1.6rem;
 }
 
-/* || main layout */
-
-main {
-  display: flex;
-}
-
-article {
-  flex: 5;
-}
-
-.secondary {
-  flex: 2;
-}
-
-footer {
-  margin-top: 10px;
-}
-
-/* Table styling */
+/* Table */
 
 table {
   width: 100%;
-  background-color: #dde;
   border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+thead {
+  background-color: #333333;
+  color: white;
 }
 
 th, td {
-  padding: 10px;
-}
-
-td {
+  padding: 1rem;
+  border: 1px solid #ccc;
   text-align: center;
 }
 
-th[scope="col"] {
-  border-bottom: 1px solid black;
-}
-
 tbody tr:nth-child(odd) {
-  background-color: #def;
+  background-color: #f9f9f9;
 }
 
-/* styling content images and audio */
+/* Images and Audio */
 
 img, audio {
   display: block;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 audio {
-  width: 500px;
+  width: 100%;
 }
 
-/* Comments styling */
+/* Comments Section */
 
 .comments {
-  background-color: #def;
-  padding: 10px;
+  background-color: #f0f8ff;
+  padding: 1rem;
 }
 
 .show-hide {
   cursor: pointer;
+  text-align: center;
+  background-color: #333333;
+  color: white;
+  padding: 0.5rem;
+  border: none;
 }
 
-.comments font[size="6"] {
-  font-size: 2rem;
-}
-
-.comments font[size="6"]:nth-of-type(2) {
-  margin-bottom: 0;
-}
-
-.comment-form {
-  margin-bottom: 3rem;
-}
-
-.comment-form .flex-pair {
-  display: flex;
-  padding: 0 3rem 1rem;
+.show-hide:focus,
+.show-hide:hover {
+  outline: 2px solid #ffffff;
 }
 
 .comment-form label {
-  align-self: center;
-  flex: 2;
-  text-align: right;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .comment-form input {
-  margin-left: 1rem;
-  flex: 6;
-}
-
-.show-hide {
-  text-align: center;
-  width: 150px;
-}
-
-.comment-form input, .comment-form label, .show-hide {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
   font-size: 1.6rem;
-  line-height: 32px;
-}
-
-.comment-form input[type="submit"], .show-hide {
-  background: #333;
-  border: 0;
-  color: white;
 }
 
 .comment-form input[type="submit"] {
-  width: 30%;
-  display: block;
-  margin: 0 auto;
-}
-
-.comment-container {
-  margin-top: 0;
+  background-color: #333333;
+  color: white;
+  border: none;
+  padding: 0.8rem;
 }
 
 .comment-container li {
   list-style-type: none;
-  display: flex;
-}
-
-.comment-container li p:nth-child(1) {
-  flex: 1;
-  font-weight: bold;
-}
-
-.comment-container li p:nth-child(2) {
-  flex: 5;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
 }
